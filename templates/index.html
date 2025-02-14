@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDEN Snake Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="game-container">
+        <h1>EDEN's Paradise</h1>
+        <div class="score-container">
+            <span>Score: <span id="score">0</span></span>
+            <span>Letters: <span id="collected-letters"></span></span>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="mobile-controls" class="mobile-only">
+            <button id="up-btn">↑</button>
+            <div class="horizontal-controls">
+                <button id="left-btn">←</button>
+                <button id="right-btn">→</button>
+            </div>
+            <button id="down-btn">↓</button>
+        </div>
+        <div id="game-over" class="hidden">
+            <h2>Game Over</h2>
+            <p>Your journey in Eden has ended</p>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="restart-button">Return to Paradise</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
